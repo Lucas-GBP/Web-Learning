@@ -1,3 +1,18 @@
 console.log("Hello World!")
 
-document.body.append("<h1>Hello World!</h1>")
+const newTodoButton = document.getElementById("new-todo-button");
+const todosList = document.getElementById("todos-list");
+console.log(newTodoButton, todosList);
+
+function addTodo(list){
+    list.innerHTML += `<div class="todoitem">
+        <input type="checkbox"/>
+        <input type="text"/>
+    </div>`;
+}
+
+if(newTodoButton || todosList) {
+    newTodoButton.onclick = () => {
+        addTodo(todosList);
+    };
+}
